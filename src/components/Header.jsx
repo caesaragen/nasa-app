@@ -23,7 +23,7 @@ const Header = () => {
         <span className='text-3xl text-[#FFB703]'>Nasa: </span>               
         <span className='text-3xl text-[#8ECAE6] '>Picture of the day </span><br></br>
         <span className='text-3xl text-[#8ECAE6] '>
-        <Moment local>{date}</Moment>
+          <Moment format='dddd, MMMM Do YYYY'>{date}</Moment>
         </span>
 
         <img src={headerImage} alt="nasa" />
