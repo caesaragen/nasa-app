@@ -13,7 +13,6 @@ const Header = () => {
       .then((data) => {
         setHeaderImage(data.hdurl)
         setDate(data.date)
-        console.log(data)
       })
   }, [])
   
@@ -23,9 +22,8 @@ const Header = () => {
         <span className='text-3xl text-[#FFB703]'>Nasa: </span>               
         <span className='text-3xl text-[#8ECAE6] '>Picture of the day </span><br></br>
         <span className='text-3xl text-[#8ECAE6] '>
-          <Moment format='dddd, MMMM Do YYYY'>{date}</Moment>
+          <Moment format='dddd, MMMM D, YYYY'>{date}</Moment>
         </span>
-
         <img src={headerImage} alt="nasa" />
       </h1>
     </div>
