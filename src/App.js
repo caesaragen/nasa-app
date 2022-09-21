@@ -1,19 +1,20 @@
 import './App.css';
-import { Header, Movies } from './components';
+import {  Movies } from './components';
+import { Routes, Route, Link, BrowserRouter as Router } from "react-router-dom";
+import { MovieDetails } from './pages';
 
 function App() {
   return (
+    <Router>
  <main className="bg-dark text-white min-vh-100">
-      <Header />
-      <Movies />
-      <Movies />
-
-      <Movies />
-      <Movies />
-      <Movies />
-      <Movies />
-
-    </main>
+              <div className="routes">
+          <Routes>
+            <Route path="/" element={<Movies />} />
+                <Route path="/movie/:movieId" element={<MovieDetails/>} />
+              </Routes>
+            </div>
+      </main>
+    </Router>
   );
 }
 
