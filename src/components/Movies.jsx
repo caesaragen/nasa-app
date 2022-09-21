@@ -1,7 +1,8 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
-import { MOVIE_URL, IMG_PATH } from '../config/config';
+import { MOVIE_URL } from '../config/config';
 import MovieCard from './MovieCard';
+
 
 const Movies = () => {
     const [movies, setMovies] = useState([]);
@@ -14,12 +15,13 @@ const Movies = () => {
             });
     }, []);
   return (
-      <div class="flex flex-wrap bg-gray-200">
+      <div class="flex items-stretch flex-wrap justify-around h-full">
         
           {movies && movies.map((movie) => (
-              <div class="  flex-wrap px-4 py-2 w-1/5 h-full">
+              <div class="block bg-white overflow-hidden border-2 px-4 p-[20px] lg:w-[18%] mr-5 mb-5 rounded my-1 md:w-1/3 lg:my-4 ">
               <MovieCard
-                  key={movie.id}
+                      key={movie.id}
+                      title={movie.title}
                   poster_path={movie.poster_path}
                   overview={movie.overview}
                   popularity={movie.popularity}
