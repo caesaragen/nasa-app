@@ -1,8 +1,9 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
+import MovieCard from './components/MovieCard';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+it('should render the MovieCard component', () => {
+  render(<MovieCard />);
+  const movieCard = screen.getByTestId('movie-card');
+  expect(movieCard).toBeInTheDocument();
 });

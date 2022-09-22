@@ -18,7 +18,6 @@ const Movies = () => {
     }, []);
 
     const goToDetails = (movieInfo) => {
-        console.log(movieInfo);
         localStorage.setItem('movieInfo', JSON.stringify(movieInfo));
         return <Navigate to={`/movie/${movieInfo.id}`} />
     }
@@ -28,8 +27,8 @@ const Movies = () => {
         <div>
             <Header />
             <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 h-full">
-                {movies && movies.map((movie) => (
-                    <div className="bg-white overflow-hidden border-2 px-4 p-[20px] mr-5 mb-5 rounded my-1  lg:my-4 " onClick={() => goToDetails(movie)}>
+                {movies && movies.map((movie, index) => (
+                    <div className="bg-white overflow-hidden border-2 px-4 p-[20px] mr-5 mb-5 rounded my-1  lg:my-4" key={index} onClick={() => goToDetails(movie)}>
                         <Link to={`/movie/${movie.id}`}>
                             <MovieCard
                                 key={movie.id}
