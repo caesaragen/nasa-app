@@ -8,10 +8,6 @@ const MovieDetails = () => {
         const items = JSON.parse(localStorage.getItem('movieInfo'));
         if (items) {
             setItems(items);
-            // convert to array
-            const itemsArray = Object.values(items);
-            // console.log(itemsArray);
-            console.log(typeof(items));
         }
     }, []);
   
@@ -20,40 +16,37 @@ const MovieDetails = () => {
         <div>
             <img className="object-contain w-1/2" src={IMG_PATH + items.poster_path} alt="Sunset in the mountains" onError={(e) => { e.target.onerror = null; e.target.src = defaultImage }} />
             <div className="px-3 py-4">
-                <div className="font-bold text-xl mb-2 ">Title: {items.title}</div>
-                <div className="font-bold text-xl mb-2">Description:</div>
-                <p className="text-light text-base">
+                <div className="font-bold text-xl mb-2 "><h2>Title: {items.title}</h2></div>
+                <div className="font-bold text-xl mb-2"><h2>Description:</h2></div>
+                <h2 className="text-light text-base">
                     {items.overview}
-                </p>
+                </h2>
                 <div>
-                    <span>Vote Average: {items.vote_average}</span>
+                    <h2>Vote Average: {items.vote_average}</h2>
                 </div>
                 <div>
-                    <span>Total Votes {items.vote_count}</span>
+                    <h2>Total Votes {items.vote_count}</h2>
                 </div>
                 <div>
-                    <span>Status</span>
+                    <h2>Status</h2>
                 </div>
                 <div>
-                    <span>IMDB Link</span>
+                    <h2>IMDB Link</h2>
                 </div>
                 <div>
-                    <span>Budget</span>
+                    <h2>Budget</h2>
                 </div>
                 <div>
-                    <span>Production Countries</span>
+                    <h2>Production Countries</h2>
                 </div>
                 <div>
-                    <span>Genres</span>
+                    <h2>Genres</h2>
                 </div>
                 <div>
-                    <span>Languages</span>
+                    <h2>Languages</h2>
                 </div>
             </div>
         </div>
-
-
-
     )
 }
 

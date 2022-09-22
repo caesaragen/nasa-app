@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import Header from './Header';
 import { MOVIE_URL } from '../config/config';
 import MovieCard from './MovieCard';
-import { Navigate, Route, Link } from 'react-router-dom';
+import { Navigate, Link } from 'react-router-dom';
 
 
 const Movies = () => {
@@ -25,23 +25,26 @@ const Movies = () => {
 
 
     return (
-        <div className="flex items-stretch flex-wrap justify-around h-full">
+        <div>
             <Header />
-            {movies && movies.map((movie) => (
-                <div className="block bg-white overflow-hidden border-2 px-4 p-[20px] lg:w-[18%] mr-5 mb-5 rounded my-1 md:w-1/3 lg:my-4 " onClick={() => goToDetails(movie)}>
-                    <Link to={`/movie/${movie.id}`}>
-                        <MovieCard
-                            key={movie.id}
-                            title={movie.title}
-                            poster_path={movie.poster_path}
-                            overview={movie.overview}
-                            popularity={movie.popularity}
-                            release_date={movie.release_date}
-                        />
-                    </Link>
-                </div>
-            ))}
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 h-full">
+                {movies && movies.map((movie) => (
+                    <div className="bg-white overflow-hidden border-2 px-4 p-[20px] mr-5 mb-5 rounded my-1  lg:my-4 " onClick={() => goToDetails(movie)}>
+                        <Link to={`/movie/${movie.id}`}>
+                            <MovieCard
+                                key={movie.id}
+                                title={movie.title}
+                                poster_path={movie.poster_path}
+                                overview={movie.overview}
+                                popularity={movie.popularity}
+                                release_date={movie.release_date}
+                            />
+                        </Link>
+                    </div>
+                ))}
+            </div>
         </div>
+
     )
 }
 

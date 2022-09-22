@@ -5,8 +5,8 @@ import defaultImage from '../assets/images/gallery.png';
 
 const MovieCard = ({ poster_path, overview, popularity, release_date, title } ) => {
   return (
-    <div className="rounded overflow-hidden cursor-pointer">
-      <img className="w-full" src={IMG_PATH + poster_path} alt="Sunset in the mountains" onError={(e) => { e.target.onerror = null; e.target.src = defaultImage }} />
+    <div className="rounded overflow-hidden cursor-pointer flex flex-col justify-center items-center w-full">
+      <img className="w-[60%] lg:w-[90%] bg-contain bg-center" src={IMG_PATH + poster_path} alt="Sunset in the mountains" onError={(e) => { e.target.onerror = null; e.target.src = defaultImage }} />
       <div className="px-3 py-4">
         <div className="font-bold text-xl mb-2 text-[#FFB703] text-center hover:underline cursor-pointer">{title}</div>
           <div className="font-bold text-xl mb-2">Description:</div>
@@ -22,4 +22,4 @@ const MovieCard = ({ poster_path, overview, popularity, release_date, title } ) 
     )
 }
 
-export default MovieCard
+export default MovieCard;

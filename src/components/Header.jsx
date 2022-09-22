@@ -1,6 +1,6 @@
-import React from 'react'
-import { useEffect, useState } from 'react'
-import { API_URL } from '../config/config'
+import React from 'react';
+import { useEffect, useState } from 'react';
+import { API_URL } from '../config/config';
 import Moment from 'react-moment';
 
 
